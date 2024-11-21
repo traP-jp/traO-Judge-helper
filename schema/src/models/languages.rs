@@ -17,16 +17,16 @@ pub struct Languages {
     pub library: Option<Box<models::LanguagesLibrary>>,
     #[serde(rename = "language", skip_serializing_if = "Option::is_none")]
     pub language: Option<Box<models::LanguagesLanguage>>,
-    #[serde(rename = "langauges")]
-    pub langauges: Vec<models::LanguagesLanguage>,
+    #[serde(rename = "languages")]
+    pub languages: Vec<models::LanguagesLanguage>,
 }
 
 impl Languages {
-    pub fn new(langauges: Vec<models::LanguagesLanguage>) -> Languages {
+    pub fn new(languages: Vec<models::LanguagesLanguage>) -> Languages {
         Languages {
             library: None,
             language: None,
-            langauges,
+            languages,
         }
     }
 }

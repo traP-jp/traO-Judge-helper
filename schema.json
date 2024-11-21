@@ -46,12 +46,12 @@
             },
             "required": ["name", "binName", "compile", "run"]
         },
-        "langauges": {
+        "languages": {
             "type": "array",
             "items": {
                 "$ref": "#/properties/language"
             }
         }
     },
-    "required": ["langauges"]
+    "required": ["languages"]
 }
