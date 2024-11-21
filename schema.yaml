@@ -1,0 +1,65 @@
+openapi: "3.0.3"
+info:
+  title: traO-Judge language settings schema
+  description: Schema only (no endpoint provided)
+  version: "0.1"
+  license:
+    name: MIT
+    url: "https://github.com/traP-jp/traO-Judge-docs/blob/main/LICENSE"
+paths:
+  "/dummy":
+    get:
+      summary: dummy
+      description: dummy endpoint
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Hello, World!"
+components:
+  schemas:
+    Version:
+      type: string
+      format: "version"
+      example: "0.1"
+    Library:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "boost"
+        version:
+          type: string
+          example: "1.76.0"
+      required:
+        - name
+    Language:
+      type: object
+      properties:
+        binName:
+          type: string
+          example: "g++"
+        compile:
+          type: string
+          example: "g++ -std=c++23 -o $dest $src"
+        run:
+          type: string
+          example: "$dest"
+        Libraries:
+          type: array
+          items:
+            $ref: "#/components/schemas/Library"
+      required:
+        - binName
+        - compile
+        - run
+    Languages:
+      type: array
+      items:
+        $ref: "#/components/schemas/Language"
