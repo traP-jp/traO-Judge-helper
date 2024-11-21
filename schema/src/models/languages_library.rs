@@ -12,18 +12,18 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Library {
+pub struct LanguagesLibrary {
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
-    pub version: Option<String>,
+    #[serde(rename = "version")]
+    pub version: String,
 }
 
-impl Library {
-    pub fn new(name: String) -> Library {
-        Library {
+impl LanguagesLibrary {
+    pub fn new(name: String, version: String) -> LanguagesLibrary {
+        LanguagesLibrary {
             name,
-            version: None,
+            version,
         }
     }
 }

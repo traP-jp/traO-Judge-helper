@@ -32,8 +32,9 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [DummyGet200Response](docs/DummyGet200Response.md)
- - [Language](docs/Language.md)
- - [Library](docs/Library.md)
+ - [Languages](docs/Languages.md)
+ - [LanguagesLanguage](docs/LanguagesLanguage.md)
+ - [LanguagesLibrary](docs/LanguagesLibrary.md)
 
 
 To get access to the crate's generated documentation, use:

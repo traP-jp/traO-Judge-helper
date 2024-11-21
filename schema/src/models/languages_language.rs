@@ -12,7 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Language {
+pub struct LanguagesLanguage {
     #[serde(rename = "name")]
     pub name: String,
     #[serde(rename = "binName")]
@@ -21,13 +21,13 @@ pub struct Language {
     pub compile: String,
     #[serde(rename = "run")]
     pub run: String,
-    #[serde(rename = "Libraries", skip_serializing_if = "Option::is_none")]
-    pub libraries: Option<Vec<models::Library>>,
+    #[serde(rename = "libraries", skip_serializing_if = "Option::is_none")]
+    pub libraries: Option<Vec<models::LanguagesLibrary>>,
 }
 
-impl Language {
-    pub fn new(name: String, bin_name: String, compile: String, run: String) -> Language {
-        Language {
+impl LanguagesLanguage {
+    pub fn new(name: String, bin_name: String, compile: String, run: String) -> LanguagesLanguage {
+        LanguagesLanguage {
             name,
             bin_name,
             compile,
