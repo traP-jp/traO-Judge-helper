@@ -1,5 +1,5 @@
 [package]
-name = "traO-Judge-helper"
+name = "toj-helper"
 version = "0.1.0"
 edition = "2021"
 
