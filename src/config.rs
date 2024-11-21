@@ -8,10 +8,10 @@ pub fn get_language_settings(
 ) -> Result<HashMap<String, LanguageSettings>> {
     let config_json =
         std::fs::read_to_string(config_json_path).context("Failed to read the config json file")?;
-    let config = serde_json::from_str::<Vec<LanguagesLanguage>>(&config_json)
+    let config = serde_json::from_str::<Languages>(&config_json)
         .context("Failed to parse the config json file")?;
     let mut language_settings = HashMap::new();
-    for language in config {
+    for language in config.languages {
         let language_name = language.name;
         let compile_command = language.compile;
         let run_command = language.run;

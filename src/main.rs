@@ -10,10 +10,10 @@ fn main() {
         .version("0.1.0")
         .about("A helper for the TOJ")
         .arg(
-            Arg::new("configjson")
+            Arg::new("config")
                 .short('c')
-                .long("configjson")
-                .value_name("CONFIG_FILE")
+                .long("config")
+                .value_name("CONFIG_JSON_FILE")
                 .required(true),
         )
         .arg(
@@ -28,8 +28,8 @@ fn main() {
                 .about("Compile the source code")
                 .arg(
                     Arg::new("source")
-                        .required(true)
-                        .index(1)
+                        .short('s')
+                        .long("source")
                         .value_name("SOURCE_FILE")
                         .required(true),
                 )
@@ -67,14 +67,15 @@ fn main() {
                 ),
         )
         .subcommand_required(true);
-
     // Parse the command line arguments
     let matches = command.get_matches();
-    let configjson_path: &PathBuf = matches
-        .get_one::<PathBuf>("configjson")
+
+    let config_path_string: &String = matches
+        .get_one::<String>("config")
         .expect("configjson is required");
+    let configjson_path = PathBuf::from(config_path_string);
     let language_settings =
-        get_language_settings(configjson_path).expect("Failed to get language settings");
+        get_language_settings(&configjson_path).expect("Failed to get language settings");
     let language: &String = matches
         .get_one::<String>("language")
         .expect("language is required");
