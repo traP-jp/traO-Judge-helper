@@ -1,0 +1,28 @@
+openapi: "3.1.0"
+info:
+  title: traO-Judge language settings schema
+  description: Schema only (no endpoint provided)
+  version: "0.1"
+  license:
+    name: MIT
+    url: "https://github.com/traP-jp/traO-Judge-docs/blob/main/LICENSE"
+paths:
+  "/dummy":
+    get:
+      summary: dummy
+      description: dummy endpoint
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Hello, World!"
+components:
+  schemas:
+    Languages:
+      $ref: './schema.json'
