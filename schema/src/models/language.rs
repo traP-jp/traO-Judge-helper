@@ -13,6 +13,8 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Language {
+    #[serde(rename = "name")]
+    pub name: String,
     #[serde(rename = "binName")]
     pub bin_name: String,
     #[serde(rename = "compile")]
@@ -24,8 +26,9 @@ pub struct Language {
 }
 
 impl Language {
-    pub fn new(bin_name: String, compile: String, run: String) -> Language {
+    pub fn new(name: String, bin_name: String, compile: String, run: String) -> Language {
         Language {
+            name,
             bin_name,
             compile,
             run,

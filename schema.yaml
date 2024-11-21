@@ -42,6 +42,9 @@ components:
     Language:
       type: object
       properties:
+        name:
+          type: string
+          example: "C++(gcc)"
         binName:
           type: string
           example: "g++"
@@ -56,10 +59,7 @@ components:
           items:
             $ref: "#/components/schemas/Library"
       required:
+        - name
         - binName
         - compile
         - run
-    Languages:
-      type: array
-      items:
-        $ref: "#/components/schemas/Language"

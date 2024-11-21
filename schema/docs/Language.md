@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **String** |  | 
 **bin_name** | **String** |  | 
 **compile** | **String** |  | 
 **run** | **String** |  | 
